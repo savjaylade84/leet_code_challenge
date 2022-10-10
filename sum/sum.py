@@ -1,7 +1,7 @@
 
 
 def sum(numbers:list[int],target:int=0) -> list[int]:
-    return list((numbers.index(left),numbers.index(right)) for left in numbers for right in numbers if (left + right) == target and  (left != right)
+    return list((numbers.index(left),numbers.index(right)) for left in numbers for right in numbers if (left + right) == target and  (left != right))
 
 
 def main() ->None:
