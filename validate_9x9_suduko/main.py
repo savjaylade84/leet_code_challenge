@@ -1,4 +1,5 @@
 
+
 import random
 
 def validate_suduko(arr:list[list]) -> bool:
@@ -20,29 +21,28 @@ def validate_suduko(arr:list[list]) -> bool:
 
     
 def main() -> None:
-    _min,_max = (1,9)
+    _min,_max = (0,9)
+    x,y = (1,9)
     index = 1 
     while True:
 
          arr = [
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)],
-             [random.randint(_min,_max) for _ in range(_min,_max)]
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)],
+             [random.randint(x,y) for _ in range(_min,_max)]
          ]
-         print(f'————————————————————————————————————')
-         print(f'total generated suduko: {index}')
-         for item in arr:
-             print(item)
-         print(f'valid suduko? {validate_suduko(arr)}')
-         print('————————————————————————————————————')
+         
+         answer:bool = validate_suduko(arr)
+         print(f'\r{arr[0]}<|      \r\n{arr[1]} |\r\n{arr[2]} |\r\n{arr[3]} |\r\n{arr[4]} |\r\n{arr[5]} |\r\n{arr[6]} |\r\n{arr[7]} |\r\n{arr[8]}<|\r')
+         print(f'\rtotal generated suduko: {index}  \r',end='')
          index += 1
-         if validate_suduko(arr):
+         if answer:
              break
     
 
